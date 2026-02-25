@@ -36,10 +36,17 @@
         <h2>AI in the classroom — without giving up the learning</h2>
         <p>As generative AI tools became widely accessible to students, Purdue University faced a familiar tension: banning AI was neither realistic nor constructive, but generic tools like ChatGPT were creating real pedagogical problems. Students in demanding courses like ECE 20875 (Python, machine learning) were submitting near-perfect homework (>95%) while exam performance dropped — a clear signal that AI was being used to complete work, not to learn.</p>
         <p>PeteChat (internally PeteGPT) was a direct response: a GPT-4 and Llama-3 powered AI tutor fine-tuned on verified Purdue course materials and built around a fundamental design principle — <strong>tutor, not solver</strong>. The project was funded by Purdue's Innovation Hub Teaching & Learning in an AI-Rich Environment program and developed in partnership with the Center for Instructional Excellence, Purdue Libraries, and RCAC.</p>
-        <div class="case-img-wrap">
-          <img src="images/petechat-interface.png" alt="PeteChat chat interface" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-          <div class="case-img-placeholder" style="display:none">PeteChat interface — chat view</div>
-          <p class="case-img-caption">PeteChat's course-aligned chat interface, with a default-open sidebar showing "Try asking…" prompts organized by assignment and topic.</p>
+        <div class="img-2col" style="margin-top:1.5rem;">
+          <figure>
+            <img src="images/petechat-interface-v1.png" alt="PeteChat original interface with usability issues" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="case-img-placeholder" style="display:none">PeteChat v1 interface</div>
+            <figcaption><strong>Before:</strong> Original interface — bright gold sidebar, poor hierarchy, no goal-setting, direct answers without scaffolding, cramped spacing.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/petechat-interface-v2.png" alt="PeteChat redesigned interface with SRL features" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="case-img-placeholder" style="display:none">PeteChat v2 redesigned interface</div>
+            <figcaption><strong>After:</strong> Redesigned interface — muted professional colors, goal-setting modal (Clarify Concept / Debug Code / Plan Steps / Get Feedback), scaffolded SRL features.</figcaption>
+          </figure>
         </div>
       </div>
 
@@ -61,6 +68,18 @@
         <p class="section-tag">Design Approach</p>
         <h2>Design-based research across four iterative phases</h2>
         <p>The project followed a design-based research (DBR) methodology — treating each semester of deployment as a design cycle with real students, real constraints, and real feedback. This approach prioritized ecological validity over laboratory control: we needed to see how the tool behaved in authentic classroom conditions, not ideal ones.</p>
+        <div class="img-2col" style="margin-bottom:1.5rem;">
+          <figure>
+            <img src="images/petechat-dbr-cycle.png" alt="Design-Based Research Cycle diagram" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="case-img-placeholder" style="display:none">DBR Cycle diagram</div>
+            <figcaption>The DBR cycle: Design → Enactment/Pilot → Analysis & Evaluation → Redesign & Refinement, with each phase feeding into the next across semesters.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/petechat-timeline.png" alt="PeteChat Grant and DBR phases timeline 2024–2026" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="case-img-placeholder" style="display:none">PeteChat project timeline</div>
+            <figcaption>Project timeline (2024–2026): Phase 0 data collection, Phase 1 large-scale eval, Phase 2 preference alignment (DPO), Phase 3 DBR expansion in Spring 2026.</figcaption>
+          </figure>
+        </div>
         <div class="process-list">
           <div class="process-item">
             <div class="process-num">Phase 0</div>
@@ -98,10 +117,17 @@
         <h2>Four expert evaluation sessions before the next prototype</h2>
         <p>Before the second iteration, we conducted formative evaluation sessions with four stakeholders — two TAs for ECE 20875, one software developer, and one UX/UI expert with learning technology experience. Each session used semi-structured interviews tailored to the stakeholder's role, with participants interacting with the live prototype and reviewing sample outputs.</p>
 
-        <div class="case-img-wrap">
-          <img src="images/petechat-mockup.png" alt="PeteChat low-fidelity interface mockups" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-          <div class="case-img-placeholder" style="display:none">PeteChat — early interface mockups</div>
-          <p class="case-img-caption">Low-fidelity interface mockups tested during formative evaluation — exploring sidebar navigation and prompt card layouts.</p>
+        <div class="img-2col" style="margin-top:1.25rem;">
+          <figure>
+            <img src="images/petechat-architecture.png" alt="PeteChat application architecture — RAG pipeline and LLM" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="case-img-placeholder" style="display:none">PeteChat system architecture</div>
+            <figcaption>System architecture: student queries pass through a RAG layer (Course Knowledge Base + Vector Database) into a Llama-3 LLM fine-tuned on Purdue's Gilbreth cluster, returning Socratic prompts rather than direct answers.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/petechat-flow.png" alt="Goal-setting modal and scaffolded prompt skeleton flow" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="case-img-placeholder" style="display:none">Goal-setting interaction flow</div>
+            <figcaption>Goal-setting interaction flow: student intent → Goal Card Selection → Policy Cue (assessment boundary) → Clarify / Plan Steps / Debug → Scaffolded Prompt Skeleton → SRL-aligned, policy-aware interaction.</figcaption>
+          </figure>
         </div>
 
         <p>Key findings from the evaluation, organized by stakeholder:</p>
@@ -190,9 +216,9 @@
         </div>
 
         <div class="case-img-wrap">
-          <img src="images/petechat-flow.png" alt="PeteChat pedagogical dialogue flow" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <img src="images/petechat-dialogue-flow.png" alt="PeteChat pedagogical dialogue flow" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
           <div class="case-img-placeholder" style="display:none">PeteChat pedagogical dialogue flow</div>
-          <p class="case-img-caption">Pedagogical dialogue flow: student prompts are routed through assessment checks, coaching pivots, hint-first responses, reverse prompting, and judgment-of-learning micro-checks — scaffolding learning rather than delivering answers.</p>
+          <p class="case-img-caption">Pedagogical dialogue flow: prompts are routed through an assessment check → coaching pivot or Hint-First/Two-Step Reveal → Reverse Prompt/JOL Micro-Check → worked example if needed. Every turn scaffolds thinking rather than delivering answers.</p>
         </div>
       </div>
 
