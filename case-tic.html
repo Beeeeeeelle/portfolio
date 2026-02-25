@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TIC App: Chinese Character Learning — Belle Li</title>
+    <meta name="description" content="Case study: TIC — a typing-based Chinese character learning app designed to address the cognitive load of character acquisition through Pinyin-driven Sound-Form-Meaning integration." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">Belle Li</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Project Library</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container case">
+      <p class="eyebrow">App Design · Chinese as a Foreign Language</p>
+      <h1>TIC: A Next-Gen Typing App for Learning Chinese Characters</h1>
+      <p class="lede narrow">TIC is a typing-based mobile app that addresses the heavy cognitive load of Chinese character acquisition by making Sound-Form-Meaning a single integrated chunk — designed for heritage speakers and CFL learners who can speak Chinese but struggle to read and type it.</p>
+
+      <div class="case-stats">
+        <div class="case-stat"><span class="case-stat-num">Live</span><span class="case-stat-label">published on the Apple App Store</span></div>
+        <div class="case-stat"><span class="case-stat-num">DBR</span><span class="case-stat-label">design-based research methodology</span></div>
+        <div class="case-stat"><span class="case-stat-num">3</span><span class="case-stat-label">core user groups: CSL learners, heritage speakers, CFL teachers</span></div>
+        <div class="case-stat"><span class="case-stat-num">1</span><span class="case-stat-label">role: Instructional Designer & Researcher</span></div>
+      </div>
+
+      <div class="case-section">
+        <p class="section-tag">Design Motivation</p>
+        <h2>A student who could speak Chinese fluently — but couldn't stay in class</h2>
+        <p>In 2018, while teaching Chinese at Indiana University's Department of East Asian Language and Culture, I encountered a student whose situation exposed a fundamental gap in how Chinese is taught. Andy Zheng — a 22-year-old American-born Chinese from a Fujian-speaking family — was placed in a first-year Chinese class based on his ACTFL placement test scores. His reading and writing were novice level. But his speaking and listening were advanced.</p>
+        <div class="img-2col" style="margin-top:1.25rem;">
+          <figure>
+            <img src="images/tic-motivation-comic1.png" alt="Andy Zheng's story — placement test mismatch" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="case-img-placeholder" style="display:none">Comic: Andy's placement story</div>
+            <figcaption>Andy Zheng — U.S.-born Chinese, speaks Fujian dialect at home, placed in first-year Chinese based on reading/writing scores despite advanced speaking and listening.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/tic-motivation-comic2.png" alt="Andy drops the class — curriculum didn't meet his goals" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="case-img-placeholder" style="display:none">Comic: Andy drops the class</div>
+            <figcaption>Andy dropped the class — "I just want to learn Chinese and be able to chat with my friends online." The curriculum's emphasis on greetings and speaking didn't match his actual goal: reading and typing characters.</figcaption>
+          </figure>
+        </div>
+        <p style="margin-top:1.25rem;">Andy's situation wasn't unique. Many American-born Chinese and heritage speakers are strong in spoken Chinese but weak in character recognition. They're interested in efficient Chinese typing — if a suitable learning approach exists. It didn't. So I built one.</p>
+      </div>
+
+      <div class="case-section">
+        <p class="section-tag">Problem</p>
+        <h2>Chinese characters carry a uniquely heavy cognitive load</h2>
+        <p>Unlike alphabetic writing systems, Chinese characters require learners to simultaneously acquire and retain three distinct dimensions: <strong>phonology</strong> (how it sounds), <strong>orthography</strong> (what it looks like — often involving 8+ strokes with named types), and <strong>semantics</strong> (what it means). Traditional instruction treats these as separate tasks, creating a retrieval burden that causes many learners — especially heritage speakers who already have phonology — to stall at the character level.</p>
+        <div class="img-2col">
+          <figure>
+            <img src="images/tic-problem-typing.png" alt="Decline in handwriting and the Pinyin typing approach" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="case-img-placeholder" style="display:none">Problem: cognitive load in Chinese typing</div>
+            <figcaption>The Pinyin input method links phonology, orthography, and meaning in a single typing action — the candidate list forces orthographic recognition at the moment of phonological activation.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/tic-problem-stroke.png" alt="Stroke complexity of Chinese characters" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="case-img-placeholder" style="display:none">Stroke complexity diagram</div>
+            <figcaption>A single character like 永 contains 8 named stroke types, each with its own term and sequence. Orthographic acquisition alone creates a heavy retrieval burden — before meaning and sound are even layered in.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <p class="section-tag">Research Foundation</p>
+        <h2>Typing-based learning has strong evidence — but no dedicated tool</h2>
+        <p>The research case for typing-based Chinese instruction is robust, but had never been translated into a purpose-built learning application. Three strands of evidence converged to justify the TIC design:</p>
+        <div class="process-list">
+          <div class="process-item">
+            <div class="process-num">01</div>
+            <div class="process-body">
+              <h3>Lexical processing in L1 contexts</h3>
+              <img src="images/tic-research-lexical.png" alt="Research on Pinyin and lexical processing" class="case-img" style="margin-top:0.75rem;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+              <div class="case-img-placeholder" style="display:none">Research: lexical processing</div>
+              <p style="margin-top:0.5rem;">Studies show Pinyin input method use is positively associated with lexical processing — the mental processes involved in recognizing and producing words — and supports the mental lexicon (Chen et al., 2017; Zhu et al., 2009).</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="process-num">02</div>
+            <div class="process-body">
+              <h3>Semantic-phonology linkage</h3>
+              <img src="images/tic-research-phonology.png" alt="Research on phonological and orthographic recognition" class="case-img" style="margin-top:0.75rem;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+              <div class="case-img-placeholder" style="display:none">Research: phonological recognition</div>
+              <p style="margin-top:0.5rem;">Both phonological recognition and orthographic recognition performance were positively related to typing experience. Pinyin input strengthens the semantic-phonology linkage without weakening the semantic-orthography linkage — beneficial for lexical cognition (Zhu et al., 2009; Chen et al., 2017).</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="process-num">03</div>
+            <div class="process-body">
+              <h3>CFL learner context</h3>
+              <img src="images/tic-research-cfl.png" alt="Pinyin input in CFL context" class="case-img" style="margin-top:0.75rem;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+              <div class="case-img-placeholder" style="display:none">Research: CFL context</div>
+              <p style="margin-top:0.5rem;">In CFL (Chinese as a Foreign Language) contexts specifically, Pinyin input has a greater effect on phonology recognition and phonology-orthography mapping compared to handwriting (Guan et al., 2011; 2015; Lyu et al., 2021).</p>
+            </div>
+          </div>
+        </div>
+        <div class="img-2col" style="margin-top:1.25rem;">
+          <figure>
+            <img src="images/tic-gap.png" alt="Gap: no technology and low adoption" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="case-img-placeholder" style="display:none">The gap: no technology developed</div>
+            <figcaption>Despite strong evidence, few teachers and students had adopted typing-based Chinese learning — and no dedicated technology had been built to support it. That was the gap TIC was designed to fill.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/tic-research-tech.png" alt="Technology reduces cognitive load" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="case-img-placeholder" style="display:none">Research: technology affordances</div>
+            <figcaption>Zhu et al. (2016): technology affordances reduced cognitive burdens and led to more efficient outcomes. CFL beginners using Pinyin-input outperformed those using handwriting in essay-writing tasks.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <p class="section-tag">Design Approach</p>
+        <h2>Design-based research: iterative, theory-grounded, field-tested</h2>
+        <p>TIC was developed using design-based research (DBR) — a methodology that integrates analysis, design, development, and evaluation in iterative cycles, keeping the design grounded in authentic learning contexts and user feedback throughout. Research participants included CSL learners, Chinese native speakers, and CFL teachers, with methods including interviews, guided walkthroughs, and observation.</p>
+        <div class="case-img-wrap">
+          <img src="images/tic-dbr-methodology.png" alt="Design-based research methodology diagram" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="case-img-placeholder" style="display:none">DBR methodology diagram</div>
+          <p class="case-img-caption">TIC's DBR framework: from identifying the practical problem through iterative prototype development with UI/UX designers, CSL learners, native speakers, and CFL teachers — to evaluation, documentation, and design principles.</p>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <p class="section-tag">How TIC Works</p>
+        <h2>Sound-Form-Meaning as one integrated chunk</h2>
+        <p>TIC's core learning mechanism is built around the Pinyin typing cycle — each new word is introduced in a real-context sentence with AI-assisted translation, then practiced through a spaced repetition sequence that progressively removes scaffolding as retention strengthens.</p>
+        <div class="case-img-wrap">
+          <img src="images/tic-how-it-works.png" alt="TIC learning mechanism — real context, progress cycle, typing practice" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="case-img-placeholder" style="display:none">TIC — how it works</div>
+          <p class="case-img-caption">TIC's learning loop: real-context sentences with ChatGPT-powered translation → progress bar cycles → first typing (tone + spelling prompted) → second/third cycles remove prompts, activating active recall of character spelling and pronunciation.</p>
+        </div>
+        <div class="case-img-wrap" style="margin-top:1.25rem;">
+          <img src="images/tic-feedback-tracking.png" alt="TIC instant feedback and learning data tracking" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="case-img-placeholder" style="display:none">TIC — feedback and tracking</div>
+          <p class="case-img-caption">Instant feedback distinguishes between tone errors (blue dotted underline) and Pinyin errors (red underline). Learning data tracking monitors engagement, completion rates, and time spent — with daily punch-card and goal-setting features for self-regulated practice.</p>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <p class="section-tag">Key Features</p>
+        <h2>Flexible, customizable, and curriculum-aligned</h2>
+        <div class="case-img-wrap">
+          <img src="images/tic-modules.png" alt="TIC customizable module and TIC module" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="case-img-placeholder" style="display:none">TIC modules</div>
+          <p class="case-img-caption">TIC Module offers default curriculum-aligned content (HSK, Integrated Chinese) for learners following standardized paths. Customizable Module supports fuzzy Pinyin, abbreviation input, and double Pinyin keyboard options — meeting learners where they are technically and linguistically.</p>
+        </div>
+        <div class="artifact-grid" style="margin-top:1.25rem;">
+          <div class="artifact-item">
+            <h4>Sound-Form-Meaning integration</h4>
+            <p>Each typing action simultaneously activates phonology (Pinyin), orthography (character recognition from candidate list), and semantics (real-context sentence). The three dimensions become one retrievable chunk.</p>
+          </div>
+          <div class="artifact-item">
+            <h4>Real-context sentences + AI translation</h4>
+            <p>Words are never learned in isolation. ChatGPT-generated sentences provide authentic usage context. The N+1 method ensures sentences are comprehensible but slightly beyond the learner's current level.</p>
+          </div>
+          <div class="artifact-item">
+            <h4>Spaced retrieval cycling</h4>
+            <p>First exposure provides full scaffolding (tone + spelling prompts). Second and third cycles progressively withdraw support — activating active recall and strengthening long-term retention through retrieval practice.</p>
+          </div>
+          <div class="artifact-item">
+            <h4>Differentiated error feedback</h4>
+            <p>Tone errors and Pinyin spelling errors are distinguished visually — helping learners understand exactly what went wrong and reinforcing accurate mental representations of each character.</p>
+          </div>
+          <div class="artifact-item">
+            <h4>Curriculum modules (HSK, Integrated Chinese)</h4>
+            <p>Default modules cover HSK levels and Integrated Chinese textbook sequences — making TIC usable as a supplement to formal classroom instruction or standardized test preparation.</p>
+          </div>
+          <div class="artifact-item">
+            <h4>Learning analytics for teachers</h4>
+            <p>Instructors can track student engagement, completion rates, and time-on-task. Goal-setting and daily punch-card features support accountability and sustainable study habits outside the classroom.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <p class="section-tag">Download</p>
+        <h2>Available on the Apple App Store</h2>
+        <p>TIC is live and available for download. Search "TIC APP" in the App Store, or scan the QR code below.</p>
+        <div class="case-img-wrap" style="max-width:420px;margin-left:auto;margin-right:auto;">
+          <img src="images/tic-app-store.png" alt="TIC App Store QR code and search instructions" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="case-img-placeholder" style="display:none">TIC — App Store download</div>
+        </div>
+      </div>
+
+      <p class="case-back"><a href="projects.html">← Back to all projects</a></p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> Belle Li</p>
+        <a href="projects.html">Project Library</a>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
