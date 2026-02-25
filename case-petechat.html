@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PeteChat AI Tutor Design — Belle Li</title>
+    <meta name="description" content="Case study: PeteChat — designing a guardrailed, course-aligned AI tutor at Purdue that teaches students to think, not what to answer." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">Belle Li</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Project Library</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container case">
+      <p class="eyebrow">AI-Enabled Learning Design · Purdue University</p>
+      <h1>PeteChat: Designing an AI Tutor That Teaches Students to Think</h1>
+      <p class="lede narrow">A design-based research project building a guardrailed, course-aligned AI learning assistant — engineered to scaffold thinking rather than deliver answers, and informed by real student behavior and stakeholder research.</p>
+
+      <div class="case-stats">
+        <div class="case-stat"><span class="case-stat-num">$84,787</span><span class="case-stat-label">Purdue Innovation Hub grant funding</span></div>
+        <div class="case-stat"><span class="case-stat-num">4</span><span class="case-stat-label">iterative design phases across semesters</span></div>
+        <div class="case-stat"><span class="case-stat-num">8</span><span class="case-stat-label">design decisions from stakeholder evaluation</span></div>
+        <div class="case-stat"><span class="case-stat-num">1</span><span class="case-stat-label">role: Core Design & Research Team Member</span></div>
+      </div>
+
+      <div class="case-section">
+        <p class="section-tag">Context</p>
+        <h2>AI in the classroom — without giving up the learning</h2>
+        <p>As generative AI tools became widely accessible to students, Purdue University faced a familiar tension: banning AI was neither realistic nor constructive, but generic tools like ChatGPT were creating real pedagogical problems. Students in demanding courses like ECE 20875 (Python, machine learning) were submitting near-perfect homework (>95%) while exam performance dropped — a clear signal that AI was being used to complete work, not to learn.</p>
+        <p>PeteChat (internally PeteGPT) was a direct response: a GPT-4 and Llama-3 powered AI tutor fine-tuned on verified Purdue course materials and built around a fundamental design principle — <strong>tutor, not solver</strong>. The project was funded by Purdue's Innovation Hub Teaching & Learning in an AI-Rich Environment program and developed in partnership with the Center for Instructional Excellence, Purdue Libraries, and RCAC.</p>
+        <div class="case-img-wrap">
+          <img src="images/petechat-interface.png" alt="PeteChat chat interface" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="case-img-placeholder" style="display:none">PeteChat interface — chat view</div>
+          <p class="case-img-caption">PeteChat's course-aligned chat interface, with a default-open sidebar showing "Try asking…" prompts organized by assignment and topic.</p>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <p class="section-tag">Problem</p>
+        <h2>Generic AI was inflating grades while degrading learning</h2>
+        <p>Stakeholder research revealed a specific and serious problem pattern: students were pasting TA feedback directly into ChatGPT rather than processing it themselves. Homework scores were artificially high while exam performance lagged — a direct consequence of AI-as-answer-machine replacing AI-as-thinking-partner. Meanwhile, TAs were drowning in regrade requests from students who didn't understand why points were deducted, and instructors had no visibility into the questions students were actually asking.</p>
+        <p>The design challenge was not technical — it was pedagogical: how do you build an AI tool that is genuinely helpful without doing the learning for the student?</p>
+      </div>
+
+      <div class="case-section">
+        <p class="section-tag">My Role</p>
+        <h2>Design research, evaluation, and pedagogical alignment</h2>
+        <p>As a core team member, I contributed to the design decision-making process, stakeholder evaluation sessions, and the translation of learning theory into dialogue design. My work focused on the pedagogical dimension of the system — ensuring that PeteChat's interaction model was grounded in self-regulated learning frameworks and that design decisions emerged from real stakeholder insights rather than assumptions.</p>
+        <p>I was involved across the formative evaluation cycle: helping design and conduct expert sessions with TAs, instructors, developers, and UX specialists, then synthesizing findings into actionable design decisions and principles that shaped the next prototype iteration.</p>
+      </div>
+
+      <div class="case-section">
+        <p class="section-tag">Design Approach</p>
+        <h2>Design-based research across four iterative phases</h2>
+        <p>The project followed a design-based research (DBR) methodology — treating each semester of deployment as a design cycle with real students, real constraints, and real feedback. This approach prioritized ecological validity over laboratory control: we needed to see how the tool behaved in authentic classroom conditions, not ideal ones.</p>
+        <div class="process-list">
+          <div class="process-item">
+            <div class="process-num">Phase 0</div>
+            <div class="process-body">
+              <h3>Foundation: Data collection and baseline tutor</h3>
+              <p>Collected course-specific materials, constructed a baseline tutor, and fine-tuned open-source LLMs (Llama-3) on Purdue's Gilbreth GPU cluster. Internal evaluations enabled rapid iteration on what worked.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="process-num">Phase 1</div>
+            <div class="process-body">
+              <h3>First deployment: Live with ECE 20875 undergraduates</h3>
+              <p>PeteChat was deployed through Gradio/Hugging Face to students in a large undergraduate Python and machine learning course. Real student interactions provided the richest window into how learners actually engaged with an AI tutor under pressure.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="process-num">Phase 2</div>
+            <div class="process-body">
+              <h3>Alignment: Direct Preference Optimization</h3>
+              <p>Using preference data collected in Phase 1, we applied Direct Preference Optimization (DPO) to align the model's scaffolding style with what students found most helpful and trustworthy. Iterative tuning improved clarity, conciseness, and pedagogical consistency.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="process-num">Phase 3</div>
+            <div class="process-body">
+              <h3>Scale: Campus-wide expansion</h3>
+              <p>With a stable, preference-aligned tutor, PeteChat expanded into additional large undergraduate Python programming courses — moving from course-specific innovation to broader institutional integration.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <p class="section-tag">Stakeholder Research</p>
+        <h2>Four expert evaluation sessions before the next prototype</h2>
+        <p>Before the second iteration, we conducted formative evaluation sessions with four stakeholders — two TAs for ECE 20875, one software developer, and one UX/UI expert with learning technology experience. Each session used semi-structured interviews tailored to the stakeholder's role, with participants interacting with the live prototype and reviewing sample outputs.</p>
+
+        <div class="case-img-wrap">
+          <img src="images/petechat-mockup.png" alt="PeteChat low-fidelity interface mockups" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="case-img-placeholder" style="display:none">PeteChat — early interface mockups</div>
+          <p class="case-img-caption">Low-fidelity interface mockups tested during formative evaluation — exploring sidebar navigation and prompt card layouts.</p>
+        </div>
+
+        <p>Key findings from the evaluation, organized by stakeholder:</p>
+        <div class="decisions-grid">
+          <div class="decision-item">
+            <h4>Students (via TAs)</h4>
+            <p>ChatGPT reliance was inflating homework scores while exam performance dropped. Students were pasting TA advice into ChatGPT instead of thinking through problems. High-value needs: debugging explanations (not fixes), study planners, and assignment clarification.</p>
+          </div>
+          <div class="decision-item">
+            <h4>TAs & Instructors</h4>
+            <p>Regrade requests without justification were a major time sink. Instructors wanted guardrails that refused direct homework answers and offered scaffolded hints with integrity reminders. All logistics answers needed "confirm on Piazza/Brightspace" disclaimers.</p>
+          </div>
+          <div class="decision-item">
+            <h4>UX Designer</h4>
+            <p>Critical onboarding gap: new users didn't know what to ask. Sidebar was closed by default — a blank-slate problem. Recommended: open sidebar with course-organized "Try asking…" example prompts, lower contrast chat backgrounds, visual outputs for multi-step answers.</p>
+          </div>
+          <div class="decision-item">
+            <h4>Developer</h4>
+            <p>Query rewriting and multimodal RAG were working well. Key priorities: minimize hallucinations, ensure faithful retrieval from course documents, establish a consistent "tutor tone" that aligned with how instructors actually taught.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <p class="section-tag">Design Decisions</p>
+        <h2>Eight decisions that shaped the next iteration</h2>
+        <p>Each design decision addressed a specific finding from the evaluation cycle. They were not feature additions — they were responses to observed student behavior and stakeholder needs.</p>
+
+        <div class="process-list">
+          <div class="process-item">
+            <div class="process-num">DD1</div>
+            <div class="process-body">
+              <h3>Homework guardrails with scaffolded hints</h3>
+              <p>When PeteChat detects a query resembling an active assignment, it activates assessment-aware mode: refuse direct solutions, respond with step-by-step hints aligned with the instructor's method, and surface an academic integrity banner. If the student persists, redirect to office hours.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="process-num">DD2</div>
+            <div class="process-body">
+              <h3>Logistics answers with freshness disclaimers</h3>
+              <p>All logistics responses cite the source document with a timestamp and append: "For the most current information, verify on Brightspace or Piazza." This positions PeteChat as a first-pass convenience, not an authoritative oracle — protecting instructors from stale-information complaints.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="process-num">DD3</div>
+            <div class="process-body">
+              <h3>Debugging as error-reading education</h3>
+              <p>When students paste error messages, PeteChat explains what the error means in plain language, identifies the likely cause without fixing the code, and asks students to articulate what they think is wrong before offering further guidance. It teaches error-reading, not copy-paste patching.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="process-num">DD4</div>
+            <div class="process-body">
+              <h3>Study planners and mock quiz generators</h3>
+              <p>A "Study Planner" mode generates time-budgeted study schedules from syllabus metadata. A "Mock Quiz" feature generates practice questions from past exams, provides immediate feedback, and tracks which topics need more review — supporting self-regulated learning without integrity risk.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="process-num">DD5</div>
+            <div class="process-body">
+              <h3>Regrade helper before human escalation</h3>
+              <p>Before a student can submit a regrade request, PeteChat presents a "Regrade Helper" flow: retrieve the relevant rubric, explain which criteria led to deductions, ask the student to articulate why they think the grading was incorrect, then surface the option to escalate. Filters unjustified requests while educating students on rubric criteria.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="process-num">DD6</div>
+            <div class="process-body">
+              <h3>Course-specific onboarding with default-open sidebar</h3>
+              <p>The interface opens with a visible sidebar showing "Try asking…" prompt cards organized by current assignments. Examples cover concept clarification, debugging, study planning, and logistics — eliminating the blank-slate problem that left new users uncertain where to start.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="process-num">DD7</div>
+            <div class="process-body">
+              <h3>Visual readability and structured outputs</h3>
+              <p>Reduced contrast on the chat area. When queries imply multi-step workflows, PeteChat defaults to tables, numbered steps, or simple flowcharts rather than dense paragraphs. An optional share/verify action lets students forward an answer snippet to a peer or TA for confirmation.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="process-num">DD8</div>
+            <div class="process-body">
+              <h3>Instructor dashboard with provenance and tone configuration</h3>
+              <p>Instructors can upload syllabi, rubrics, and announcements through a lightweight portal. Every response shows which course documents were retrieved (provenance citations). Per-course tone configuration and alignment audits let instructors tune the assistant without touching code.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-img-wrap">
+          <img src="images/petechat-flow.png" alt="PeteChat pedagogical dialogue flow" class="case-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="case-img-placeholder" style="display:none">PeteChat pedagogical dialogue flow</div>
+          <p class="case-img-caption">Pedagogical dialogue flow: student prompts are routed through assessment checks, coaching pivots, hint-first responses, reverse prompting, and judgment-of-learning micro-checks — scaffolding learning rather than delivering answers.</p>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <p class="section-tag">Design Principles</p>
+        <h2>Eight principles that guide every trade-off</h2>
+        <div class="artifact-grid">
+          <div class="artifact-item">
+            <h4>Tutor, not solver</h4>
+            <p>Default to hinting and scaffolding. Teach how to think — debug explanations, step-by-step reasoning — not what to answer.</p>
+          </div>
+          <div class="artifact-item">
+            <h4>Align to the course</h4>
+            <p>Ground all responses in instructor-provided materials. Show provenance. Add freshness disclaimers for logistics to protect instructors.</p>
+          </div>
+          <div class="artifact-item">
+            <h4>Respect academic integrity</h4>
+            <p>Include guardrails and integrity reminders on homework. Encourage students to read and follow instructions before asking the AI.</p>
+          </div>
+          <div class="artifact-item">
+            <h4>Reduce TA overhead</h4>
+            <p>Automate clarity (summaries of instructions), regrade explanations from rubrics, and handle repeat questions with consistent, concise answers.</p>
+          </div>
+          <div class="artifact-item">
+            <h4>Design for clarity and momentum</h4>
+            <p>Open sidebar with "Try asking…" examples per homework/exam. Keep answers concise, visual when helpful, and readable.</p>
+          </div>
+          <div class="artifact-item">
+            <h4>Flexible control for staff</h4>
+            <p>Let instructors upload/update content, set tone, and review alignment metrics. Easy to tune without writing code.</p>
+          </div>
+          <div class="artifact-item">
+            <h4>Trust through transparency</h4>
+            <p>Show sources, note uncertainty, and provide optional share/confirm actions so students can verify with peers or TAs.</p>
+          </div>
+          <div class="artifact-item">
+            <h4>Time-aware support</h4>
+            <p>Offer study plans and mock quizzes scoped to available time and upcoming exams to keep students on track.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <p class="section-tag">Impact</p>
+        <h2>A principled model for assessment-aware AI in higher education</h2>
+        <p>PeteChat established a replicable design pattern for AI tutors that preserve academic integrity without banning AI from the learning environment. Rather than leaving students to navigate generic tools with no guardrails, the system gave instructors a configurable, pedagogically aligned assistant — one that reduced TA workload while actively reinforcing the learning behaviors that homework and exams are supposed to develop.</p>
+        <p>After Phase 1 deployment in ECE 20875, the system expanded to additional large undergraduate programming courses in Phase 3, representing a transition from course-specific innovation to campus-level infrastructure. The formative evaluation methodology — conducting expert sessions across student, instructor, developer, and UX perspectives before each design cycle — established a stakeholder-research model applicable to any future AI tool development at the institution.</p>
+        <p>The project's design principles have been written up as a design case contributing to the emerging literature on generative AI in higher education — advancing the field's understanding of how AI systems can be deliberately designed to support learning processes without undermining the integrity of assessment.</p>
+      </div>
+
+      <p class="case-back"><a href="projects.html">← Back to all projects</a></p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> Belle Li</p>
+        <a href="projects.html">Project Library</a>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
