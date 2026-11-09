@@ -6,7 +6,7 @@ Static, GitHub Pages-ready portfolio for Belle Li (Learning Experience Design fo
 
 - `index.html`
 - `projects.html`
-- `case-edci557.html`
+- `case-edci577.html`
 - `case-hilink.html`
 - `case-cyberlab.html`
 - `styles.css`
